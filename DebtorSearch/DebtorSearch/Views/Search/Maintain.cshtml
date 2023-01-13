@@ -1,0 +1,136 @@
+﻿@model IEnumerable<DebtorSearch.Models.UserViewModel>
+
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Maintain";
+}
+<form action="/" method="post">
+
+    <div class="form-group">
+
+        <div class="col-md-5">
+            <input class="form-control" id="Searchbox" name="Searchbox" type="text" ng-model="Searchbox" placeholder="Search...">
+            <input class="form-control" id="role" name="role" type="hidden" ng-model="role">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <br />
+    <table id="Users" class="table table-hover table-condensed table-striped">
+        <thead class="levelOne">
+            <tr>
+                <th>User Name</th>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Employee No.</th>
+                <th>Security Question</th>
+                <th>Security Answer</th>
+                <th>Role</th>
+                <th>Edit|Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr class="table-hover">
+
+                <td>@item.UserName</td>
+                <td>@item.Surname</td>
+                <td>@item.Name</td>
+                <td>@item.EmployeeNo</td>
+                <td>@item.SecurityQuestion</td>
+                <td>@item.SecurityAnswer</td>
+                <td>@item.Department</td>
+
+                <td>
+
+                    @Html.ActionLink("Edit", "Update", "Search",
+      new { id = item.Id  },
+      new { @class = "btn btn-info btn-sm" }
+
+      )
+                    @Html.ActionLink("Delete", "Delete", "Search",
+new { id = item.Id  },
+new { @class = "btn btn-danger btn-sm" }
+)
+                </td>
+
+            </tr>
+
+
+            }
+        </tbody>
+
+
+    </table>
+
+
+</form>
+
+@section scripts
+
+
+
+{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $("#Searchbox").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#Users tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            $('#Users').DataTable({
+                //lrtp, lfrtip, Bfrtip
+                dom: 'lfrtip',
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": false,
+                "pageLength": 15,
+                "searching": false,
+                
+            });
+
+
+
+
+        });
+    </script>
+}
+@*{
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+                $("#Searchbox").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#Users tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+
+
+        </script>
+    }*@

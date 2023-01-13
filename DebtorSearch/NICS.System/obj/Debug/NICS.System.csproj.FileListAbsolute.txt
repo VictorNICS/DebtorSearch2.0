@@ -1,0 +1,43 @@
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\bin\Debug\NICS.System.dll
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\bin\Debug\NICS.System.pdb
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\bin\Debug\ExcelDataReader.dll
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\bin\Debug\ExcelDataReader.xml
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\obj\Debug\NICS.System.csproj.CoreCompileInputs.cache
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\obj\Debug\NICS.System.csproj.CopyComplete
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\obj\Debug\NICS.System.dll
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\obj\Debug\NICS.System.pdb
+C:\Users\MphaphuliL\source\repos\NICS.System\NICS.System\obj\Debug\NICS.System.csprojAssemblyReference.cache
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\NICS.System.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\NICS.System.pdb
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\ExcelDataReader.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\ExcelDataReader.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\obj\Debug\NICS.System.csproj.CoreCompileInputs.cache
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\obj\Debug\NICS.System.csproj.CopyComplete
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\obj\Debug\NICS.System.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\obj\Debug\NICS.System.pdb
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\obj\Debug\NICS.System.csprojAssemblyReference.cache
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\NICS.System.dll.config
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\EntityFramework.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\EntityFramework.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\Accounting Tool\NICS.System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\NICS.System.dll.config
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\NICS.System.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\NICS.System.pdb
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\EntityFramework.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\ExcelDataReader.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\EntityFramework.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\ExcelDataReader.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\obj\Debug\NICS.System.csprojAssemblyReference.cache
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\obj\Debug\NICS.System.csproj.CoreCompileInputs.cache
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\obj\Debug\NICS.System.csproj.CopyComplete
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\obj\Debug\NICS.System.dll
+C:\Users\MphaphuliL\Documents\Visual Studio 2017\Projects\DebtorSearch\NICS.System\obj\Debug\NICS.System.pdb

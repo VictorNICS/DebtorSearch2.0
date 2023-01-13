@@ -1,0 +1,33 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "::Error";
+}
+
+<div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-8">
+        <div class="error-template">
+            <h1>
+                Oops!
+            </h1>
+            <h3>
+                Error
+            </h3>
+            <div class="error-details">
+                <h6>Sorry, an error has occured,Something went wrong!</h6>
+                <h6>Contact your support personel and qoute your Error Id, Error Id :<i>@Session.SessionID</i></h6>
+            </div>
+            <div class="error-actions">
+                <a href="@Url.Action("Index", "Search")" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-home"></span>
+                    Take Me Home
+                </a>
+                @*<a href="http://www.jquery2dotnet.com" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>*@
+            </div>
+        </div>
+    </div>
+</div>
+

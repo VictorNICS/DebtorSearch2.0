@@ -1,0 +1,75 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("Index", "Sms", FormMethod.Post, new { @class = "form-horizontal", role = "form", autocomplete = "off" }))
+{
+    <div class="form-group">
+        <div class="col-md-4">
+            Last Refresh Time:<b>@ViewBag.LastUpdateTime </b>
+            <br />
+            Data Delay: <b>60 Secs</b>
+        </div>
+        <div class="col-md-8">
+           
+
+        </div>
+    </div>
+    @*<div class="form-group" ng-show="Auto">
+        <div class="col-md-4">
+          
+        </div>
+        <div class="col-md-8">
+            <button type="submit" value="Refresh" class="btn btn-success btn-sm">
+                <span class="glyphicon glyphicon-refresh"></span>
+            </button><span>
+            </span>
+            <a href="@Url.Action("Index", "Sms")" class="btn btn-success btn-sm">
+
+                Refresh
+            </a>
+        </div>
+    </div>*@
+
+    <br />
+
+    <table id="debtors" class="table table-hover table-condensed table-striped">
+        <thead class="levelOne">
+            <tr>
+                @foreach (DataColumn col in Model.Columns)
+                {
+                    <th>@col.ColumnName</th>
+                }
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DataRow row in Model.Rows)
+            {
+                <tr class="table-hover">
+
+                    @foreach (DataColumn col in Model.Columns)
+                    {
+                        <td>@row[col.ColumnName]</td>
+                    }
+
+                </tr>
+
+            }
+        </tbody>
+
+
+    </table>
+}
+
+@section scripts
+{
+    <script type="text/javascript" >
+    setInterval(
+        function ()
+        {
+            location.reload();
+        }, 60000)
+    </script>
+}

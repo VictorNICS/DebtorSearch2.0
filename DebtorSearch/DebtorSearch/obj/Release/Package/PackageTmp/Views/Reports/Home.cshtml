@@ -1,0 +1,83 @@
+﻿@model DebtorSearch.Models.ReportsViewModel
+@{
+    ViewBag.Title = "Reports";
+}
+
+@using (Html.BeginForm("Home", "Reports", FormMethod.Post, new { @class = "form-horizontal", role = "form", autocomplete = "off" }))
+{
+    <ng-form id="ReportForm" name="ReportForm">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Report, new { @class = "col-md-2 control-label" })
+            <div class="col-md-7">
+                <select name="Report" id="Report" class="form-control" ng-model="Report.ReportType" ng-required="true">
+                    @foreach (var question in Model.ReportTypes)
+                    {
+                        <option value="@question.Value">@question.Text</option>
+                    }
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Client, new { @class = "col-md-2 control-label" })
+            <div class="col-md-7">
+                <select name="Client" id="Client" class="form-control" ng-model="Report.Client" ng-required="true">
+                    @foreach (var question in Model.Clients)
+                    {
+                        <option value="@question.Value">@question.Text</option>
+                    }
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                
+                <input type="submit" id="submit" class="btn btn-success" value="Generate" ng-disabled="ReportForm.$invalid" onclick="showLoader()"  />
+
+                <input type="button" class="btn btn-primary" value="Back" onclick="history.go(-1)" />
+            </div>
+        </div>
+    </ng-form>
+
+  
+}
+@section scripts
+    {
+
+
+
+    <script type="text/javascript">
+      
+        $(document).ready(function () {
+       
+           
+
+         
+        
+        });
+    
+     
+        function showLoader() {
+            swal({
+                title: "Please Wait...",
+                text: "Genarating Report...check your downloads folder ",
+                type: "info",
+                showLoaderOnConfirm: false,
+                allowOutsideClick: false,
+                timer: 70000
+                
+
+            });
+
+            swal.showLoading();
+
+        };
+
+    </script>
+
+
+}

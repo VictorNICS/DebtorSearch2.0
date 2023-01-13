@@ -1,0 +1,33 @@
+﻿@model DebtorSearch.Models.ActivityReportModel
+@{
+    ViewBag.Title = "Home";
+}
+
+@using (Html.BeginForm("Index", "Activity", FormMethod.Post, new { @class = "form-horizontal", role = "form", autocomplete = "off" }))
+{
+<ng-form id="ReportForm" name="ReportForm">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client, new { @class = "col-md-2 control-label" })
+        <div class="col-md-7">
+            <select name="Client" id="Client" class="form-control" ng-model="Report.Client" ng-required="true">
+                @foreach (var client in Model.Clients)
+                {
+                    <option value="@client.Value">@client.Text</option>
+                }
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-7">
+            <input type="submit" value="Submit" class="btn btn-success" ng-disabled="Books.$invalid" />
+            <input type="button" class="btn btn-primary" value="Back" onclick="history.go(-1)" />
+        </div>
+    </div>
+</ng-form>
+        }
+

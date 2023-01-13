@@ -1,0 +1,64 @@
+﻿@model DebtorSearch.Models.ConnStringViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Activity", FormMethod.Post, new { @class = "form-horizontal", role = "form", autocomplete = "off" }))
+{
+<ng-form id="CreateForm" name="CreateForm">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-6">
+            
+
+                <select name="Name" id="Name" class="form-control" ng-model="Name" ng-required="true">
+                    @foreach (var db in Model.Databases)
+                    {
+                        <option value="@db.Value">@db.Text</option>
+                    }
+                </select>
+                @*<input class="form-control" id="Name" name="Name" type="text" value="" ng-model="Name" ng-required="true">*@
+
+        </div>
+        </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ServerName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-6">
+
+            <input class="form-control" id="ServerName" name="ServerName" type="text" value="" ng-model="ServerName" ng-required="true">
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserId, new { @class = "col-md-2 control-label" })
+        <div class="col-md-6">
+
+            <input class="form-control" id="UserId" name="UserId" type="text" value="" ng-model="UserId" ng-required="true">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-6">
+
+            <input class="form-control" id="Password" name="Password" type="text" value="" ng-model="Password" ng-required="true">
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" id="submit" class="btn btn-success" value="submit" ng-disabled="CreateForm.$invalid" />
+
+            <input type="button" class="btn btn-primary" value="Back" onclick="history.go(-1)" />
+        </div>
+    </div>
+</ng-form>
+
+
+}
+

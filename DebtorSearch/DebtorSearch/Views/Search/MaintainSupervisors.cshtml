@@ -1,0 +1,71 @@
+﻿@model  IEnumerable<DebtorSearch.Models.BooksViewmodel>
+@{
+    ViewBag.Title = "MaintainSupervisors";
+}
+<ng-form id="mainForm" name="mainForm" class="form-horizontal">
+    @if (Model.Any() && Model != null)
+    {
+
+        <table class="table table-hover table-condensed table-striped">
+            <thead class="levelOne">
+                <tr>
+                    <th>UserName</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Books</th>
+                    <th>Add | Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+
+                <tr class="table-hover">
+                    <td>@item.UserName</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>
+                        <table>
+                            @foreach (var book in item.Books)
+                            {
+
+                                <tr>
+                                    <td>@book.BookName</td>
+                                </tr>
+
+                            }
+
+                        </table>
+                    </td>
+                    @*<td>
+
+               @Html.ActionLink("Add ", "Update", "Search",
+         new { id = item.UserName, },
+         new { @class = "btn btn-info btn-sm " }
+         )
+               @Html.ActionLink("Delete ", "Delete", "Search",
+        new { id = item.UserName },
+         new { @class = "btn btn-danger btn-sm " }
+        )
+
+           </td>*@
+
+                    <td>
+
+                        @Html.ActionLink("Add | Delete Book", "AddSupervisorBooks", "Search",
+          new { id = item.Id },
+          new { @class = "btn btn-primary btn-xs" }
+
+          )
+  
+                    </td>
+
+                </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+
+</ng-form>

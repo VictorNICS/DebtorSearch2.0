@@ -1,0 +1,189 @@
+﻿@using DebtorSearch.DatabaseReader
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="Controller">
+<head>
+    <meta charset="utf-8" />
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Debtor Search</title>
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript">
+      var RootUrl = '@Url.Content("~/")';
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.7.0/sweetalert2.all.js"></script>
+    @*<script src="https://unpkg.com/sweetalert2@7.7.0/dist/sweetalert2.all.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+
+    <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="navbar-brand" href="@Url.Action("Index","Search")">
+                        <img src="~/Content/Images/NICS-Logo.svg" alt="Home" height="30" />
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <a class="navbar-brand" href="@Url.Action("Index", "Search")">
+
+                        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+	{
+		 /*Show username if authenticated*/
+         <i style="color:#ffffff">Welcome :@DataBaseReader.GetNameByEmail()</i>
+	}
+
+
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse sidebar" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","Search")">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="@Url.Action("Home","Activity")">Consultant Activity<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+
+
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="@Url.Action("Search","Search")">Debtor Search<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-search"></span></a></li>
+                    }
+                    <li><a href="@Url.Action("Index","Sms")">Sms Batch View<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-phone"></span></a></li>
+                    @if (DataBaseReader.GetUserRoleByEmail().Department == "5" || DataBaseReader.GetUserRoleByEmail().Department == "2" || DataBaseReader.GetUserRoleByEmail().Department == "16" || DataBaseReader.GetUserRoleByEmail().Department == "12" || DataBaseReader.GetUserRoleByEmail().Department == "7" || DataBaseReader.GetUserRoleByEmail().Department == "8")
+                    {
+                        <li><a href="@Url.Action("Home","Reports")">Reports<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-dashboard"></span></a></li>
+
+                    }
+                    @if (DataBaseReader.GetUserRoleByEmail().Department == "5")
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintain Users<span class="caret"></span><span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">
+                                <li><a href="@Url.Action("Maintain","Search")">Change User Role<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("MaintainSupervisors","Search")">Supervisors<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-plus-sign"></span></a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Connection Strings<span class="caret"></span><span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-wrench"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">
+                                <li><a href="@Url.Action("Create","Activity")">Add Connection<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-plus"></span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("UpdatePassword","Activity")">Update Password<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-edit"></span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("DeleteConnectionString","Activity")">Delete<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-trash"></span></a></li>
+
+
+                            </ul>
+                        </li>
+                       
+
+                    }
+
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        /*Show username if authenticated*/
+                        <li><a href="@Url.Action("LogOff","Account")">Logout<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>
+                    }
+
+
+
+
+                </ul>
+                    </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+
+        @if (TempData["Message"] != null)
+        {
+            <script type="text/javascript">
+            swal(" ", '@TempData["Message"]', '@TempData["Icon"]');
+            </script>
+        }
+        <div class="row">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-9">
+
+                @RenderBody()
+                <hr />
+                <footer>
+                    <div class="row">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                            <p>&copy; @DateTime.Now.Year - @Url.Encode("www.nics.co.za")</p>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/App")
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".date").datepicker({
+                dateFormat: "yy-mm-dd",
+                maxDate: "0",
+                changeYear: true,
+                yearRange: "-10:+0",
+                // onSelect: function () { SetReadonly();}
+            });
+            //$('.date').attr('readonly', true);
+            $('.date').attr('placeholder', "Please select a date");
+        });
+
+    </script>
+
+
+</body>
+</html>
